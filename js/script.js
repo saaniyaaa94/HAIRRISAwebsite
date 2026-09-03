@@ -16,7 +16,7 @@ nav.querySelectorAll('a').forEach((link) => {
 });
 
 const revealTargets = document.querySelectorAll(
-  '.service-card, .gallery-card, .review-card, .about-copy, .hero-copy, .visit-copy'
+  '.service-row, .gallery-card, .review-card, .about-copy, .hero-copy, .visit-copy'
 );
 
 if ('IntersectionObserver' in window) {

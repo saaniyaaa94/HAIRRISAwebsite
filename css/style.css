@@ -10,6 +10,27 @@ body {
   overflow-x: hidden;
 }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Load curtain ---------- */
+.curtain { display: none; }
+html.has-js .curtain {
+  display: flex; align-items: center; justify-content: center;
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--charcoal);
+  transition: transform .8s cubic-bezier(.65, 0, .35, 1), opacity .5s ease .25s;
+}
+html.has-js .curtain::after {
+  content: "";
+  width: 10px; height: 10px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  animation: pulse 1s ease-in-out infinite;
+}
+.curtain.hide { transform: translateY(-100%); opacity: 0; pointer-events: none; }
+@keyframes pulse { 0%, 100% { opacity: .4; transform: rotate(45deg) scale(.85); } 50% { opacity: 1; transform: rotate(45deg) scale(1.15); } }
+@media (prefers-reduced-motion: reduce) {
+  html.has-js .curtain { transition: opacity .3s ease; }
+}
 h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; color: #201a14; margin: 0 0 .5em; }
 p { line-height: 1.75; margin: 0 0 1em; }
 a { color: inherit; text-decoration: none; }
@@ -53,6 +74,9 @@ section { padding: 104px 0; position: relative; }
 }
 .eyebrow.center::after { margin-left: auto; margin-right: auto; }
 .center { text-align: center; }
+.seam { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 40px; }
+.seam span { width: 52px; height: 1px; background: var(--line); }
+.seam i { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); display: block; }
 .lead { color: var(--ink-soft); font-size: 1.05rem; font-weight: 300; }
 .lead.center { max-width: 560px; margin: 0 auto 3em; }
 
@@ -122,7 +146,10 @@ section { padding: 104px 0; position: relative; }
   align-items: center;
 }
 .hero h1 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); line-height: 1.1; font-weight: 400; }
-.hero h1 em { color: var(--terracotta); font-style: italic; font-weight: 400; }
+.hero h1 em.accent { position: relative; color: var(--terracotta); font-style: italic; font-weight: 400; display: inline-block; }
+.swash { position: absolute; left: 0; bottom: -8px; width: 100%; height: 14px; color: var(--terracotta); overflow: visible; }
+.swash path { stroke-dasharray: 170; stroke-dashoffset: 170; animation: drawLine 1s ease .9s forwards; }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin: 32px 0 28px; }
 .hero-rating { display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--ink-soft); font-size: .9rem; letter-spacing: .02em; }
 .stars { color: var(--gold); letter-spacing: 2px; }
@@ -212,8 +239,9 @@ section { padding: 104px 0; position: relative; }
   border-bottom: 1px solid var(--line);
   transition: padding-left .25s ease;
 }
-.service-row:hover { padding-left: 10px; }
-.service-num { font-family: 'Fraunces', serif; font-style: italic; color: var(--gold); font-size: 1.1rem; }
+.service-row:hover { padding-left: 14px; background: linear-gradient(to right, rgba(176, 141, 87, .07), transparent 70%); }
+.service-num { display: inline-block; font-family: 'Fraunces', serif; font-style: italic; color: var(--gold); font-size: 1.1rem; transition: transform .3s ease, color .3s ease; }
+.service-row:hover .service-num { color: var(--terracotta); transform: scale(1.2); }
 .service-row h3 { font-size: 1.2rem; margin: 0; }
 .service-row p { color: var(--ink-soft); font-size: .95rem; margin: 0; font-weight: 300; }
 
@@ -274,7 +302,14 @@ section { padding: 104px 0; position: relative; }
   line-height: 1; z-index: 0;
 }
 .review-card p { position: relative; z-index: 1; font-family: 'Fraunces', serif; font-style: italic; color: var(--ink); font-size: 1.02rem; }
-.review-card cite { position: relative; z-index: 1; font-style: normal; font-weight: 500; color: var(--gold); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.review-card cite { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; font-style: normal; font-weight: 500; color: var(--gold); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.avatar {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--cream-deep); border: 1px solid var(--line);
+  color: var(--terracotta); font-family: 'Fraunces', serif; font-style: italic; font-size: .8rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
 
 /* ---------- Visit ---------- */
 .visit { background: var(--charcoal); color: var(--cream-deep); }

@@ -1,5 +1,18 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const curtain = document.getElementById('curtain');
+if (curtain) {
+  let curtainHidden = false;
+  const hideCurtain = () => {
+    if (curtainHidden) return;
+    curtainHidden = true;
+    curtain.classList.add('hide');
+    setTimeout(() => curtain.remove(), 900);
+  };
+  window.addEventListener('load', hideCurtain);
+  setTimeout(hideCurtain, 1200);
+}
+
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
 

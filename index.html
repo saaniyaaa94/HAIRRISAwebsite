@@ -10,8 +10,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('has-js');</script>
 </head>
 <body>
+
+<div class="curtain" id="curtain" aria-hidden="true"></div>
 
 <header class="site-header" id="top">
   <div class="wrap header-inner">
@@ -38,7 +41,7 @@
     <div class="wrap hero-inner">
       <div class="hero-copy">
         <p class="eyebrow">Hair Salon &middot; Auckland CBD</p>
-        <h1>Beautifully<br><em>simple</em> hair,<br>done with care.</h1>
+        <h1>Beautifully<br><em class="accent">simple<svg class="swash" viewBox="0 0 140 16" aria-hidden="true"><path d="M2,9 C28,-1 54,15 79,7 C101,1 118,11 138,5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></em> hair,<br>done with care.</h1>
         <p class="lead">Risa Hair is a calm, considered salon tucked inside the Atrium on Elliott — cuts, colour and styling crafted around you.</p>
         <div class="hero-actions">
           <a class="btn btn-dark" href="tel:0093570116">Call 09 357 0116</a>
@@ -159,6 +162,7 @@
 
   <section class="gallery" id="gallery">
     <div class="wrap">
+      <div class="seam" aria-hidden="true"><span></span><i></i><span></span></div>
       <p class="eyebrow center">Look book</p>
       <h2 class="center">A peek at the vibe</h2>
       <div class="gallery-grid">
@@ -175,6 +179,7 @@
 
   <section class="reviews" id="reviews">
     <div class="wrap">
+      <div class="seam" aria-hidden="true"><span></span><i></i><span></span></div>
       <p class="eyebrow center">Kind words</p>
       <h2 class="center">Loved around Auckland CBD</h2>
       <div class="review-summary">
@@ -192,15 +197,15 @@
       <div class="review-grid">
         <blockquote class="review-card">
           <p>“Such a lovely, welcoming salon right in the CBD — my hair has never felt better!”</p>
-          <cite>Google review</cite>
+          <cite><span class="avatar">G</span> Google review</cite>
         </blockquote>
         <blockquote class="review-card">
           <p>“Booked in on my lunch break and left feeling like a new person. Highly recommend.”</p>
-          <cite>Google review</cite>
+          <cite><span class="avatar">G</span> Google review</cite>
         </blockquote>
         <blockquote class="review-card">
           <p>“Friendly team, great colour work, and so easy to find in the Atrium on Elliott.”</p>
-          <cite>Facebook review</cite>
+          <cite><span class="avatar">F</span> Facebook review</cite>
         </blockquote>
       </div>
     </div>

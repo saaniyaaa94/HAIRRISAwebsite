@@ -51,13 +51,25 @@
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="arch arch-main">
-          <div class="arch-badge">
-            <svg viewBox="0 0 64 64" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="14" cy="46" r="7"></circle>
-              <circle cx="14" cy="18" r="7"></circle>
-              <line x1="19.5" y1="23" x2="52" y2="52"></line>
-              <line x1="19.5" y1="41" x2="52" y2="12"></line>
-            </svg>
+          <div class="badge-wrap">
+            <div class="badge-ring">
+              <svg viewBox="0 0 200 200">
+                <defs>
+                  <path id="ringPath" d="M 100,100 m -82,0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0"></path>
+                </defs>
+                <text font-size="10.5" letter-spacing="3.5" fill="currentColor">
+                  <textPath href="#ringPath">BOOK YOUR APPOINTMENT &#10022; BOOK YOUR APPOINTMENT &#10022; </textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="arch-badge">
+              <svg viewBox="0 0 64 64" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="14" cy="46" r="7"></circle>
+                <circle cx="14" cy="18" r="7"></circle>
+                <line x1="19.5" y1="23" x2="52" y2="52"></line>
+                <line x1="19.5" y1="41" x2="52" y2="12"></line>
+              </svg>
+            </div>
           </div>
         </div>
         <div class="arch arch-small"></div>
@@ -150,12 +162,12 @@
       <p class="eyebrow center">Look book</p>
       <h2 class="center">A peek at the vibe</h2>
       <div class="gallery-grid">
-        <div class="gallery-card g1"><span>Soft Curls</span></div>
-        <div class="gallery-card g2"><span>Balayage Glow</span></div>
-        <div class="gallery-card g3"><span>Sleek Blowout</span></div>
-        <div class="gallery-card g4"><span>Bridal Updo</span></div>
-        <div class="gallery-card g5"><span>Fresh Fringe</span></div>
-        <div class="gallery-card g6"><span>Colour Melt</span></div>
+        <div class="gallery-card g1"><div class="gallery-bg"></div><span>Soft Curls</span></div>
+        <div class="gallery-card g2"><div class="gallery-bg"></div><span>Balayage Glow</span></div>
+        <div class="gallery-card g3"><div class="gallery-bg"></div><span>Sleek Blowout</span></div>
+        <div class="gallery-card g4"><div class="gallery-bg"></div><span>Bridal Updo</span></div>
+        <div class="gallery-card g5"><div class="gallery-bg"></div><span>Fresh Fringe</span></div>
+        <div class="gallery-card g6"><div class="gallery-bg"></div><span>Colour Melt</span></div>
       </div>
       <p class="gallery-note">Have your own before &amp; afters? Swap these placeholder tiles for real salon photos any time.</p>
     </div>

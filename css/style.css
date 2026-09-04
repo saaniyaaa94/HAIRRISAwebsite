@@ -113,7 +113,10 @@ html.has-js .curtain::after {
 }
 
 /* ---------- Hero ---------- */
-.hero { background: var(--ink); color: var(--paper); padding-top: 156px; padding-bottom: 76px; }
+.hero {
+  background: linear-gradient(180deg, rgba(18,17,16,.6), rgba(18,17,16,.9)), url('../images/hair-sign-dusk.webp') center 65% / cover no-repeat;
+  color: var(--paper); padding-top: 156px; padding-bottom: 76px;
+}
 .hero .eyebrow { color: var(--vermillion); }
 .hero h1 {
   font-size: clamp(2.6rem, 6.4vw, 5.4rem);
